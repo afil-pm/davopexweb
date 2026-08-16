@@ -523,26 +523,191 @@ box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 text-align: center;
 }
 
-.upi-btn {
-width: 100%;
-background: #fff;
+.payment-container::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 3px;
+background: linear-gradient(90deg, #00c853, #0066ff, #7c4dff);
+}
+
+.security-badge {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+background: rgba(0, 200, 83, 0.15);
+border: 1px solid rgba(0, 200, 83, 0.3);
+color: #00c853;
+padding: 6px 12px;
+border-radius: 20px;
+font-size: 0.75rem;
+font-weight: 600;
+margin-bottom: 15px;
+}
+
+.security-badge i {
+font-size: 0.85rem;
+}
+
+.upi-apps-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 10px;
+margin: 20px 0;
+}
+
+.upi-app-btn {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 6px;
+padding: 12px 8px;
+border-radius: 12px;
+border: 1px solid var(--glass-border);
+background: rgba(255, 255, 255, 0.05);
+color: #fff;
+cursor: pointer;
+transition: all 0.3s ease;
+font-size: 0.7rem;
+font-weight: 500;
+}
+
+.upi-app-btn i {
+font-size: 1.8rem;
+}
+
+.upi-app-btn.gpay { border-color: rgba(66, 133, 244, 0.4); }
+.upi-app-btn.gpay i { color: #4285f4; }
+.upi-app-btn.gpay:hover { background: rgba(66, 133, 244, 0.15); border-color: #4285f4; }
+
+.upi-app-btn.phonepe { border-color: rgba(89, 46, 222, 0.4); }
+.upi-app-btn.phonepe i { color: #592ede; }
+.upi-app-btn.phonepe:hover { background: rgba(89, 46, 222, 0.15); border-color: #592ede; }
+
+.upi-app-btn.paytm { border-color: rgba(0, 170, 255, 0.4); }
+.upi-app-btn.paytm i { color: #00aaff; }
+.upi-app-btn.paytm:hover { background: rgba(0, 170, 255, 0.15); border-color: #00aaff; }
+
+.upi-app-btn.navi { border-color: rgba(30, 180, 130, 0.4); }
+.upi-app-btn.navi i { color: #1eb482; }
+.upi-app-btn.navi:hover { background: rgba(30, 180, 130, 0.15); border-color: #1eb482; }
+
+.upi-app-btn.famapp { border-color: rgba(255, 82, 82, 0.4); }
+.upi-app-btn.famapp i { color: #ff5252; }
+.upi-app-btn.famapp:hover { background: rgba(255, 82, 82, 0.15); border-color: #ff5252; }
+
+.upi-app-btn.cred { border-color: rgba(255, 152, 0, 0.4); }
+.upi-app-btn.cred i { color: #ff9800; }
+.upi-app-btn.cred:hover { background: rgba(255, 152, 0, 0.15); border-color: #ff9800; }
+
+.upi-app-btn.amazon { border-color: rgba(255, 153, 0, 0.4); }
+.upi-app-btn.amazon i { color: #ff9900; }
+.upi-app-btn.amazon:hover { background: rgba(255, 153, 0, 0.15); border-color: #ff9900; }
+
+.upi-app-btn.other-upi { border-color: rgba(0, 102, 255, 0.4); }
+.upi-app-btn.other-upi i { color: var(--primary-blue); }
+.upi-app-btn.other-upi:hover { background: rgba(0, 102, 255, 0.15); border-color: var(--primary-blue); }
+
+.upi-app-btn:active {
+transform: scale(0.95);
+}
+
+.amount-input-wrapper {
+position: relative;
+margin: 15px 0;
+}
+
+.amount-input-wrapper i {
+position: absolute;
+left: 15px;
+top: 50%;
+transform: translateY(-50%);
 color: var(--primary-blue);
+font-size: 1.1rem;
+}
+
+.amount-input {
+width: 100%;
+padding: 14px 15px 14px 40px;
+border-radius: 12px;
+border: 1px solid var(--glass-border);
+background: rgba(0,0,0,0.3);
+color: #fff;
+font-size: 1rem;
+box-sizing: border-box;
+transition: border-color 0.3s;
+}
+
+.amount-input:focus {
+border-color: var(--primary-blue);
+outline: none;
+}
+
+.amount-input::placeholder {
+color: rgba(255,255,255,0.4);
+}
+
+.pay-now-btn {
+width: 100%;
+background: linear-gradient(135deg, #0066ff 0%, #7c4dff 100%);
+color: #fff;
 border: none;
 padding: 15px;
-border-radius: 10px;
-font-weight: 800;
+border-radius: 12px;
+font-weight: 700;
+font-size: 1rem;
 cursor: pointer;
 display: flex;
 align-items: center;
 justify-content: center;
 gap: 10px;
-transition: transform 0.2s;
-margin: 20px 0;
+transition: all 0.3s ease;
+margin-top: 15px;
+box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
 }
 
-.upi-btn:hover { transform: scale(1.02); background: #f0f0f0; }
+.pay-now-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
+}
+
+.pay-now-btn:active {
+transform: scale(0.98);
+}
+
+.pay-now-btn i {
+font-size: 1.2rem;
+}
 
 /* QR Area Style */
+.qr-section {
+margin-top: 20px;
+padding-top: 20px;
+border-top: 1px solid var(--glass-border);
+}
+
+.qr-toggle-btn {
+background: rgba(255, 255, 255, 0.08);
+border: 1px solid var(--glass-border);
+color: #fff;
+padding: 10px 20px;
+border-radius: 10px;
+cursor: pointer;
+font-size: 0.9rem;
+font-weight: 500;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+transition: all 0.3s;
+}
+
+.qr-toggle-btn:hover {
+background: rgba(255, 255, 255, 0.12);
+}
+
 .qr-display-area {
 display: none;
 text-align: center;
@@ -552,12 +717,52 @@ animation: fadeIn 0.5s ease;
 
 .qr-display-area img {
 width: 200px;
-height: 200x;
-background: var(--glass-border);
-border: 1px solid var(--glass-border);
+height: 200px;
+background: #fff;
+border: 2px solid var(--glass-border);
 border-radius: 15px;
-padding: 2px;
-box-shadow: 0 0 15px rgba(255,255,255,0.2);
+padding: 8px;
+box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+.qr-label {
+margin-top: 10px;
+font-size: 0.85rem;
+font-weight: 600;
+color: rgba(255,255,255,0.8);
+}
+
+.upi-id-display {
+margin-top: 12px;
+padding: 10px 15px;
+background: rgba(0, 102, 255, 0.1);
+border: 1px dashed rgba(0, 102, 255, 0.4);
+border-radius: 10px;
+font-size: 0.85rem;
+word-break: break-all;
+}
+
+.upi-id-display span {
+color: var(--primary-blue);
+font-weight: 700;
+}
+
+.payment-footer {
+margin-top: 20px;
+padding-top: 15px;
+border-top: 1px solid var(--glass-border);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+font-size: 0.7rem;
+opacity: 0.6;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.payment-footer i {
+color: #00c853;
 }
 
 @keyframes fadeIn {
@@ -565,6 +770,28 @@ from { opacity: 0; transform: translateY(10px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes pulse {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.6; }
+}
+
+.support-note {
+font-size: 0.8rem;
+color: rgba(255,255,255,0.6);
+line-height: 1.6;
+margin-top: 15px;
+padding: 12px;
+background: rgba(255,255,255,0.03);
+border-radius: 10px;
+border-left: 3px solid var(--primary-blue);
+text-align: left;
+}
+
+@media (max-width: 400px) {
+.upi-apps-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
 /* END PAYMENT STYLES */
 footer {
 text-align: center;
@@ -1034,29 +1261,88 @@ margin-top: 10px;
 </section>
 
 <section id="payment">
-<h2>Support davopex</h2>
-<p>If our tutorials are helpful to you, you can support us.</p>
+<h2>Support Davopex</h2>
+<p>Help us keep creating free cybersecurity tutorials. Your support means a lot!</p>
 
 <div class="payment-container">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px;">
-<h3>Development Support Portal</h3>
-<i class="fa-solid fa-shield-halved" style="font-size:1.5rem;"></i>
+<h3 style="margin:0; font-size:1.2rem;">Quick Payment</h3>
+<i class="fa-solid fa-shield-halved" style="font-size:1.5rem; color:#00c853;"></i>
 </div>
 
-<p style="font-size: 0.9rem; opacity: 0.9;">Secure contributions via UPI</p>
+<div class="security-badge">
+<i class="fa-solid fa-lock"></i> UPI Secured • Instant Transfer
+</div>
 
-<button class="upi-btn" id="upi-pay-trigger">
-<i class="fa-solid fa-mobile-screen-button"></i> SHOW QR
+<p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 5px;">Select your UPI app to pay instantly</p>
+
+<div class="upi-apps-grid">
+<button class="upi-app-btn gpay" onclick="openUPIApp('gpay')">
+<i class="fab fa-google"></i>
+GPay
+</button>
+<button class="upi-app-btn phonepe" onclick="openUPIApp('phonepe')">
+<i class="fas fa-mobile-screen"></i>
+PhonePe
+</button>
+<button class="upi-app-btn paytm" onclick="openUPIApp('paytm')">
+<i class="fas fa-wallet"></i>
+Paytm
+</button>
+<button class="upi-app-btn navi" onclick="openUPIApp('navi')">
+<i class="fas fa-bolt"></i>
+Navi
+</button>
+<button class="upi-app-btn famapp" onclick="openUPIApp('famapp')">
+<i class="fas fa-rocket"></i>
+FamPay
+</button>
+<button class="upi-app-btn cred" onclick="openUPIApp('cred')">
+<i class="fas fa-shield-halved"></i>
+CRED
+</button>
+<button class="upi-app-btn amazon" onclick="openUPIApp('amazon')">
+<i class="fab fa-amazon"></i>
+Amazon
+</button>
+<button class="upi-app-btn other-upi" onclick="openUPIApp('generic')">
+<i class="fas fa-ellipsis"></i>
+More
+</button>
+</div>
+
+<div class="amount-input-wrapper">
+<i class="fa-solid fa-indian-rupee-sign"></i>
+<input type="number" class="amount-input" id="upi-amount" placeholder="Enter amount (optional)" min="1">
+</div>
+
+<button class="pay-now-btn" id="pay-now-btn" onclick="payWithUPI()">
+<i class="fa-solid fa-bolt"></i> Open UPI App
+</button>
+
+<div class="qr-section">
+<button class="qr-toggle-btn" onclick="toggleQRCode()">
+<i class="fas fa-qrcode"></i> Show QR Code Instead
 </button>
 
 <div class="qr-display-area" id="qr-container">
-<img src="https://davopex.vercel.app/images/qr.png" alt="Payment QR Code">
-<p style="margin-top:10px; font-size: 0.9rem; font-weight: bold;">Scan with any UPI App</p>
+<img src="https://davopex.vercel.app/images/qr.png" alt="Payment QR Code" loading="lazy">
+<p class="qr-label">Scan with any UPI App</p>
+<div class="upi-id-display">
+UPI ID: <span>davopex@upi</span>
+</div>
+</div>
 </div>
 
-<p style="font-size:0.7rem; text-align:center; margin-top:15px; opacity:0.6;">
-SECURE ENCRYPTED TRANSACTION • 2026 DAVOPEX PROTOCOL
-</p>
+<div class="support-note">
+<i class="fa-solid fa-heart" style="color:#ff5252;"></i> 
+Your support helps us create more free cybersecurity content and tutorials for everyone.
+</div>
+
+<div class="payment-footer">
+<i class="fa-solid fa-lock"></i>
+256-bit Encrypted • UPI Secure • No Data Stored
+</div>
 </div>
 </section>
 
@@ -1128,22 +1414,176 @@ SECURE ENCRYPTED TRANSACTION • 2026 DAVOPEX PROTOCOL
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+const UPIConfig = {
+    pa: 'davopex@upi',
+    pn: 'Davopex',
+    cu: 'INR',
+    url: 'https://davopex.vercel.app',
+    tn: 'Support Davopex'
+};
+
 const PaymentSystem = (function() {
     return {
         init: function() {
-            const upiBtn = document.getElementById('upi-pay-trigger');
+            const qrToggle = document.querySelector('.qr-toggle-btn');
             const qrContainer = document.getElementById('qr-container');
 
-            if (upiBtn && qrContainer) {
-                upiBtn.addEventListener('click', () => {
-                    // Simply toggle visibility
-                    upiBtn.style.display = 'none'; 
-                    qrContainer.style.display = 'block';
+            if (qrToggle && qrContainer) {
+                qrToggle.addEventListener('click', () => {
+                    toggleQRCode();
                 });
             }
         }
     };
 })();
+
+function getUPIUrl(amount) {
+    let url = `upi://pay?pa=${encodeURIComponent(UPIConfig.pa)}&pn=${encodeURIComponent(UPIConfig.pn)}&cu=${UPIConfig.cu}&url=${encodeURIComponent(UPIConfig.url)}&tn=${encodeURIComponent(UPIConfig.tn)}`;
+    if (amount && amount > 0) {
+        url += `&am=${amount}`;
+    }
+    return url;
+}
+
+function openUPIApp(appName) {
+    const amount = document.getElementById('upi-amount').value;
+    const upiUrl = getUPIUrl(amount);
+
+    const appSchemes = {
+        gpay: [
+            'gpay://upi/?pa=' + UPIConfig.pa,
+            'tez://upi/?pa=' + UPIConfig.pa
+        ],
+        phonepe: [
+            'phonepe://pay?pa=' + UPIConfig.pa
+        ],
+        paytm: [
+            'paytmmp://pay?pa=' + UPIConfig.pa
+        ],
+        navi: [
+            'naviupi://pay?pa=' + UPIConfig.pa
+        ],
+        famapp: [
+            'fampay://upi?pa=' + UPIConfig.pa
+        ],
+        cred: [
+            'cred://upi/pay?pa=' + UPIConfig.pa
+        ],
+        amazon: [
+            'amazonpay://pay?pa=' + UPIConfig.pa
+        ],
+        generic: []
+    };
+
+    if (amount && amount > 0) {
+        Object.keys(appSchemes).forEach(key => {
+            if (appSchemes[key].length > 0) {
+                appSchemes[key] = appSchemes[key].map(scheme => scheme + '&am=' + amount);
+            }
+        });
+    }
+
+    const schemes = appSchemes[appName] || [];
+    let appOpened = false;
+
+    if (schemes.length > 0) {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        const tryScheme = (index) => {
+            if (index >= schemes.length) {
+                document.body.removeChild(iframe);
+                window.location.href = upiUrl;
+                return;
+            }
+
+            const startTime = Date.now();
+            window.location.href = schemes[index];
+
+            setTimeout(() => {
+                if (Date.now() - startTime < 1500) {
+                    tryScheme(index + 1);
+                } else {
+                    document.body.removeChild(iframe);
+                }
+            }, 1000);
+        };
+
+        tryScheme(0);
+    } else {
+        window.location.href = upiUrl;
+    }
+
+    showPaymentFeedback(appName);
+}
+
+function payWithUPI() {
+    const amount = document.getElementById('upi-amount').value;
+    const upiUrl = getUPIUrl(amount);
+
+    if (isMobileDevice()) {
+        window.location.href = upiUrl;
+    } else {
+        showDesktopFallback();
+    }
+}
+
+function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function showDesktopFallback() {
+    const existing = document.querySelector('.desktop-fallback-modal');
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.className = 'desktop-fallback-modal';
+    modal.innerHTML = `
+        <div class="fallback-content">
+            <div class="fallback-header">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <h3>Scan QR to Pay</h3>
+            </div>
+            <img src="https://davopex.vercel.app/images/qr.png" alt="UPI QR Code" style="width:200px; border-radius:12px; border:2px solid var(--glass-border); padding:8px; background:#fff;">
+            <p style="margin:15px 0 5px; font-size:0.9rem;">UPI ID: <strong>${UPIConfig.pa}</strong></p>
+            <p style="font-size:0.8rem; color:rgba(255,255,255,0.6);">Open any UPI app on your phone and scan this QR code</p>
+            <button onclick="this.closest('.desktop-fallback-modal').remove()" style="margin-top:15px; padding:10px 25px; background:var(--primary-blue); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600;">Close</button>
+        </div>
+    `;
+    modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:3000;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(5px);';
+    modal.querySelector('.fallback-content').style.cssText = 'background:rgba(20,20,25,0.98);padding:30px;border-radius:20px;border:1px solid var(--glass-border);text-align:center;max-width:320px;width:90%;';
+    modal.querySelector('.fallback-header').style.cssText = 'margin-bottom:20px;';
+    modal.querySelector('.fallback-header i').style.cssText = 'font-size:2.5rem;color:var(--primary-blue);';
+    modal.querySelector('.fallback-header h3').style.cssText = 'margin:10px 0 0;color:#fff;';
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+    document.body.appendChild(modal);
+}
+
+function showPaymentFeedback(appName) {
+    const btn = document.getElementById('pay-now-btn');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Opening...';
+    btn.style.opacity = '0.8';
+
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.opacity = '1';
+    }, 2000);
+}
+
+function toggleQRCode() {
+    const qrContainer = document.getElementById('qr-container');
+    const toggleBtn = document.querySelector('.qr-toggle-btn');
+
+    if (qrContainer.style.display === 'block') {
+        qrContainer.style.display = 'none';
+        toggleBtn.innerHTML = '<i class="fas fa-qrcode"></i> Show QR Code Instead';
+    } else {
+        qrContainer.style.display = 'block';
+        toggleBtn.innerHTML = '<i class="fas fa-times"></i> Hide QR Code';
+    }
+}
 
 const toggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('nav-menu');
